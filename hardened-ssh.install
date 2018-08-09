@@ -5,5 +5,9 @@ pre_install () {
 }
 
 post_install () {
-  /usr/share/${pkgname}/ssh_harden.sh a "${conf}"
+  /usr/share/hardened-ssh/ssh_harden.sh a "${conf}"
+}
+
+post_upgrade () {
+  post_install
 }
