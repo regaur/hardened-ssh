@@ -1,0 +1,9 @@
+conf=/etc/ssh/sshd_config
+
+pre_install () {
+  cp "${conf}" "${conf}.pre-harden"
+}
+
+post_install () {
+  /usr/share/${pkgname}/ssh_harden.sh a "${conf}"
+}
